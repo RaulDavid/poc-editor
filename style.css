@@ -1,0 +1,89 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+#editor {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+}
+
+#menu-bar {
+    position: relative;
+    z-index: 20; /* Definir um z-index mais alto para o menu */
+}
+
+#drawing-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10; /* Certificar-se de que o canvas tenha um z-index menor que o menu */
+    pointer-events: none; /* Desabilitar eventos de ponteiro por padrão */
+}
+
+#drawing-canvas.active {
+    pointer-events: auto; /* Habilitar eventos de ponteiro quando ativo */
+    opacity: 1;
+}
+
+#markdown-input {
+    position: relative;
+    z-index: 1;
+}
+
+.editor-container {
+    height: 100%;
+    width: 100%;
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.menu-bar {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 8px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu-bar button {
+    margin: 2px;
+    padding: 6px 10px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.menu-bar button:hover {
+    background-color: #f0f0f0;
+}
+
+.menu-bar button.is-active {
+    background-color: #e0e0e0;
+    border-color: #bbb;
+}
+
+.tiptap-editor blockquote {
+    border-left: 3px solid #ddd;
+    margin-left: 0;
+    padding-left: 10px;
+    color: #666;
+}
+
+.tiptap-editor code {
+    background-color: #f0f0f0;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: monospace;
+}

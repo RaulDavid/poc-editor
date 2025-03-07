@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Editor and Canvas Drawing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="editor">
+        <div class="editor-container">
+            <div id="menu-bar" class="menu-bar">
+                <button id="drawing-button">Drawing</button>
+                <button data-action="heading" data-level="1">H1</button>
+                <button data-action="heading" data-level="2">H2</button>
+                <button data-action="heading" data-level="3">H3</button>
+                <button data-action="bold">Bold</button>
+                <button data-action="italic">Italic</button>
+                <button data-action="bulletList">Bullet List</button>
+                <button data-action="orderedList">Ordered List</button>
+                <button data-action="blockquote">Quote</button>
+                <button data-action="code">Code</button>
+                <button data-action="undo">Undo</button>
+                <button data-action="redo">Redo</button>
+            </div>
+            <canvas id="drawing-canvas"></canvas>
+            <div id="markdown-input" class="tiptap-editor"></div>
+        </div>
+    </div>
+    
+    <script type="module" src="index.js"></script>
+</body>
+</html>
